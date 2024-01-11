@@ -1,13 +1,13 @@
 # Use the official Node.js image as the base image
-FROM node:16.14.0-alpine 
+FROM node:16.17.0-alpine 
 # If you're using M1, M2 Mac, try this: 
 # FROM  --platform=linux/amd64 node:16.14.0-alpine
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY . .
 
 # Install dependencies
 RUN npm install
@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 # Expose the port
-EXPOSE 3000
+EXPOSE 4000
 
 # Start the application
-CMD [ "node", "app.js" ]
+CMD [ "node", "server.js" ]

@@ -2,7 +2,7 @@ const express = require("express")
 const cors = require("cors")
 require('dotenv').config()
 const connectDB = require("./dbconnection/dbConnection")
-const synckStock=require('./controller/stock')
+const synckStock=require('./routes/stock')
 connectDB();
 
 const app = express()

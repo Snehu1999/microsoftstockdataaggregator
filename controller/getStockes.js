@@ -26,6 +26,7 @@ const getStockes=async(req,res)=>{
           console.log(convertedData);
         
           stockSchema.insertMany(convertedData)
+          res.status(200).send(convertedData)
 
     } catch (error) {
         console.log("error",error);
